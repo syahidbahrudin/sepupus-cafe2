@@ -13,11 +13,19 @@ export default function Home() {
           className="w-full h-full object-cover"
         />
       </div>
-      <Image src={logo} alt="Next.js logo" width={700} height={300} priority />
-      <div>
-        <p className="text-lg lg:text-4xl font-bold text-amber-950">
-          Delicious is impressive
-        </p>
+      <div className="bg-white rounded-full p-5 size-[600px] flex flex-col justify-center items-center">
+        <Image
+          src={logo}
+          alt="Next.js logo"
+          width={600}
+          height={200}
+          priority
+        />
+        <div>
+          <p className="text-lg lg:text-4xl font-bold text-amber-950">
+            Delicious is impressive
+          </p>
+        </div>
       </div>
     </div>
   );
