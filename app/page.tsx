@@ -13,7 +13,7 @@ export default function Home() {
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="bg-white rounded-full p-5 size-[600px] flex flex-col justify-center items-center">
+      <div className="bg-white rounded-full p-5 size-[300px] sm:size-[400px] md:size-[500px] lg:size-[600px] xl:size-[700px] flex flex-col justify-center items-center">
         <Image
           src={logo}
           alt="Next.js logo"
