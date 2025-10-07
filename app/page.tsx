@@ -1,32 +1,94 @@
-import Image from "next/image";
-import logo from "@/assets/sepupus-logo-no-background.png";
-import logoNoBackground from "@/assets/MacBook Air - 1.png";
+"use client";
+import TopBar from "@/components/TopBar";
+import About from "@/components/About";
+import Menu from "@/components/Menu";
+import Contact from "@/components/Contact";
+import CTA from "@/components/CTA";
+import WelcomeScreen from "@/components/WelcomeScreen";
+import HeroSection from "@/components/HeroSection";
+import Footer from "@/components/Footer";
+import { useState, useEffect, useRef } from "react";
+
 export default function Home() {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isHeroVisible, setIsHeroVisible] = useState(false);
+  const [showWelcome, setShowWelcome] = useState(true);
+  const [welcomeAnimationPhase, setWelcomeAnimationPhase] = useState(0);
+  const heroRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    document.body.classList.add("welcome-active");
+
+    const welcomeSequence = async () => {
+      setWelcomeAnimationPhase(1);
+
+      setTimeout(() => setWelcomeAnimationPhase(2), 800);
+
+      setTimeout(() => setWelcomeAnimationPhase(3), 2500);
+
+      setTimeout(() => {
+        setShowWelcome(false);
+        setIsLoaded(true);
+        setIsHeroVisible(true);
+        document.body.classList.remove("welcome-active");
+      }, 3500);
+    };
+
+    welcomeSequence();
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsHeroVisible(true);
+        } else {
+          setIsHeroVisible(false);
+        }
+      },
+      {
+        threshold: 0.3,
+        rootMargin: "-50px",
+      }
+    );
+
+    if (heroRef.current) {
+      observer.observe(heroRef.current);
+    }
+
+    return () => {
+      if (heroRef.current) {
+        observer.unobserve(heroRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="relative font-sans  flex justify-center items-center h-screen flex-col px-5">
-      <div className="fixed inset-0 -z-10 left-0 w-full h-full">
-        <img
-          src={logoNoBackground.src}
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <div className="bg-white rounded-full p-5 size-[300px] sm:size-[400px] md:size-[500px] lg:size-[600px] xl:size-[700px] flex flex-col justify-center items-center">
-        <Image
-          src={logo}
-          alt="Next.js logo"
-          width={600}
-          height={200}
-          priority
-        />
-        <div>
-          <p className="text-lg lg:text-4xl font-bold text-amber-950">
-            Delicious is impressive
-          </p>
-        </div>
-      </div>
+    <div className="relative">
+      {/* Welcome Screen */}
+      <WelcomeScreen
+        showWelcome={showWelcome}
+        welcomeAnimationPhase={welcomeAnimationPhase}
+      />
+
+      {/* Scroll-triggered TopBar */}
+      <TopBar />
+
+      {/* Hero Section */}
+      <HeroSection
+        ref={heroRef}
+        isLoaded={isLoaded}
+        isHeroVisible={isHeroVisible}
+      />
+
+      {/* All Sections */}
+      <About />
+      <Menu />
+      <Contact />
+      <CTA />
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

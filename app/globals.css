@@ -1,6 +1,16 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  /* background-color: #461901; */
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+/* Prevent scrolling during welcome screen */
+body.welcome-active {
+  overflow: hidden;
 }
