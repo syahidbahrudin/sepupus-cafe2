@@ -34,10 +34,10 @@ const HeroSection = forwardRef<HTMLElement, HeroSectionProps>(
 
         {/* Hero Content Overlay */}
         <div className="absolute inset-0 bg-black/20">
-          <div className="relative z-10 max-w-[1300px] mx-auto  h-full flex flex-col justify-center">
-            <div>
+          <div className="relative z-10 max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
+            <div className="text-center sm:text-left">
               <h1
-                className={`text-6xl md:text-6xl font-bold text-orange-300 mb-4 transition-all duration-1000 ease-out ${
+                className={`text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-bold text-orange-300 mb-2 sm:mb-4 transition-all duration-1000 ease-out leading-tight ${
                   isLoaded && isHeroVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-8"
@@ -49,7 +49,7 @@ const HeroSection = forwardRef<HTMLElement, HeroSectionProps>(
                 Good food
               </h1>
               <h1
-                className={`text-6xl md:text-6xl font-bold text-white mb-4 transition-all duration-1000 ease-out ${
+                className={`text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-bold text-white mb-2 sm:mb-4 transition-all duration-1000 ease-out leading-tight ${
                   isLoaded && isHeroVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-8"
@@ -61,7 +61,7 @@ const HeroSection = forwardRef<HTMLElement, HeroSectionProps>(
                 Great coffee
               </h1>
               <h1
-                className={`text-6xl md:text-6xl font-bold text-orange-200 mb-4 transition-all duration-1000 ease-out ${
+                className={`text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-bold text-orange-200 mb-4 sm:mb-6 transition-all duration-1000 ease-out leading-tight ${
                   isLoaded && isHeroVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-8"
@@ -73,7 +73,7 @@ const HeroSection = forwardRef<HTMLElement, HeroSectionProps>(
                 Better companion
               </h1>
               <p
-                className={`text-white text-xl max-w-[600px] leading-relaxed transition-all duration-1000 ease-out ${
+                className={`text-white text-base sm:text-lg md:text-xl max-w-[600px] leading-relaxed transition-all duration-1000 ease-out mx-auto sm:mx-0 ${
                   isLoaded && isHeroVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-8"
@@ -89,7 +89,7 @@ const HeroSection = forwardRef<HTMLElement, HeroSectionProps>(
 
               {/* Hero CTA Button */}
               <div
-                className={`mt-8 transition-all duration-1000 ease-out ${
+                className={`mt-6 sm:mt-8 transition-all duration-1000 ease-out text-center sm:text-left ${
                   isLoaded && isHeroVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-8"
@@ -108,7 +108,7 @@ const HeroSection = forwardRef<HTMLElement, HeroSectionProps>(
                       });
                     }
                   }}
-                  className="hover:cursor-pointer bg-orange-200 hover:bg-orange-300 text-orange-950 px-6 py-2 rounded-full font-medium text-lg transition-all duration-200 shadow-lg hover:shadow-xl"
+                  className="hover:cursor-pointer bg-orange-200 hover:bg-orange-300 text-orange-950 px-6 sm:px-8 py-2 sm:py-3 rounded-full font-medium text-base sm:text-lg transition-all duration-200 shadow-lg hover:shadow-xl"
                 >
                   Explore Our Menu
                 </button>

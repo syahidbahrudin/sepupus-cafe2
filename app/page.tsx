@@ -82,10 +82,10 @@ export default function Home() {
       />
 
       {/* All Sections */}
-      <About />
-      <Menu />
-      <Contact />
-      <CTA />
+      {/* <About />
+      <Menu /> */}
+      {/* <Contact />
+      <CTA /> */}
 
       {/* Footer */}
       <Footer />

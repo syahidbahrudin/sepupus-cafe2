@@ -36,12 +36,12 @@ export default function CTA() {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b from-orange-200 to-orange-300 py-20"
+      className="bg-gradient-to-b from-orange-200 to-orange-300 py-12 sm:py-16 lg:py-20"
     >
-      <div className="max-w-[1300px] mx-auto px-6">
-        <div className="text-center mb-16">
+      <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 sm:mb-16">
           <h2
-            className={`text-5xl font-bold text-orange-900 mb-6 transition-all duration-1000 ease-out ${
+            className={`text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-900 mb-4 sm:mb-6 transition-all duration-1000 ease-out ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"
@@ -51,7 +51,7 @@ export default function CTA() {
             Ready for Your Perfect Cup?
           </h2>
           <p
-            className={`text-xl text-orange-800 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 ease-out ${
+            className={`text-lg sm:text-xl text-orange-800 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 ease-out ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"
@@ -63,23 +63,23 @@ export default function CTA() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
           {/* Order Online */}
           <div
-            className={`bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg text-center group hover:bg-white transition-all duration-1000 ease-out ${
+            className={`bg-white/80 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-lg text-center group hover:bg-white transition-all duration-1000 ease-out sm:col-span-2 lg:col-span-1 ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"
             }`}
             style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
           >
-            <div className="w-16 h-16 bg-orange-200 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-300 transition-colors duration-300">
-              <Coffee className="w-8 h-8 text-orange-900" />
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-orange-200 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:bg-orange-300 transition-colors duration-300">
+              <Coffee className="w-6 h-6 sm:w-8 sm:h-8 text-orange-900" />
             </div>
-            <h3 className="text-2xl font-bold text-orange-900 mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-orange-900 mb-3 sm:mb-4">
               Order Online
             </h3>
-            <p className="text-orange-800 mb-6">
+            <p className="text-orange-800 mb-4 sm:mb-6 text-sm sm:text-base">
               Skip the wait! Order your favorite drinks and food online for
               pickup or delivery.
             </p>
@@ -87,10 +87,10 @@ export default function CTA() {
               href="https://wa.me/+60124940241"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-orange-900 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-800 transition-colors duration-200"
+              className="inline-flex items-center gap-2 bg-orange-900 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold hover:bg-orange-800 transition-colors duration-200 text-sm sm:text-base"
             >
               Order Now
-              <ArrowUpRight className="w-4 h-4" />
+              <ArrowUpRight className="w-3 h-3 sm:w-4 sm:h-4" />
             </Link>
           </div>
 

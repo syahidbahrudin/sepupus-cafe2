@@ -36,12 +36,12 @@ export default function Contact() {
     <section
       ref={sectionRef}
       id="contact"
-      className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-200 py-20"
+      className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-200 py-12 sm:py-16 lg:py-20"
     >
-      <div className="max-w-[1300px] mx-auto px-6">
-        <div className="text-center mb-16">
+      <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 sm:mb-16">
           <h2
-            className={`text-5xl font-bold text-orange-900 mb-6 transition-all duration-1000 ease-out ${
+            className={`text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-900 mb-4 sm:mb-6 transition-all duration-1000 ease-out ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"
@@ -51,7 +51,7 @@ export default function Contact() {
             Visit Us
           </h2>
           <p
-            className={`text-xl text-orange-800 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 ease-out ${
+            className={`text-lg sm:text-xl text-orange-800 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 ease-out ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"
@@ -63,18 +63,18 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             <div
-              className={`bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-lg transition-all duration-1000 ease-out ${
+              className={`bg-white/70 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-lg transition-all duration-1000 ease-out ${
                 isVisible
                   ? "opacity-100 translate-x-0"
                   : "opacity-0 -translate-x-8"
               }`}
               style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
             >
-              <h3 className="text-2xl font-bold text-orange-900 mb-6">
+              <h3 className="text-xl sm:text-2xl font-bold text-orange-900 mb-4 sm:mb-6">
                 Get in Touch
               </h3>
 
@@ -124,9 +124,9 @@ export default function Contact() {
             </div>
 
             {/* Opening Hours */}
-            <div className="bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
-              <h3 className="text-2xl font-bold text-orange-900 mb-6 flex items-center gap-3">
-                <Clock className="w-6 h-6" />
+            <div className="bg-white/70 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-lg">
+              <h3 className="text-xl sm:text-2xl font-bold text-orange-900 mb-4 sm:mb-6 flex items-center gap-3">
+                <Clock className="w-5 h-5 sm:w-6 sm:h-6" />
                 Opening Hours
               </h3>
 
@@ -163,10 +163,10 @@ export default function Contact() {
           </div>
 
           {/* Map and Social Media */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Map Placeholder */}
-            <div className="bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
-              <h3 className="text-2xl font-bold text-orange-900 mb-6">
+            <div className="bg-white/70 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-lg">
+              <h3 className="text-xl sm:text-2xl font-bold text-orange-900 mb-4 sm:mb-6">
                 Find Us
               </h3>
               <div className="bg-gradient-to-br from-orange-100 to-amber-100 rounded-xl p-8 text-center">
@@ -182,8 +182,8 @@ export default function Contact() {
             </div>
 
             {/* Social Media */}
-            <div className="bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
-              <h3 className="text-2xl font-bold text-orange-900 mb-6">
+            <div className="bg-white/70 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-lg">
+              <h3 className="text-xl sm:text-2xl font-bold text-orange-900 mb-4 sm:mb-6">
                 Follow Us
               </h3>
 
@@ -226,20 +226,20 @@ export default function Contact() {
         </div>
 
         {/* Contact CTA */}
-        <div className="mt-12 text-center">
-          <div className="bg-gradient-to-r from-orange-300 to-amber-300 p-8 rounded-2xl shadow-lg">
-            <h3 className="text-2xl font-bold text-orange-900 mb-4">
+        <div className="mt-8 sm:mt-12 text-center">
+          <div className="bg-gradient-to-r from-orange-300 to-amber-300 p-6 sm:p-8 rounded-2xl shadow-lg">
+            <h3 className="text-xl sm:text-2xl font-bold text-orange-900 mb-3 sm:mb-4">
               Questions or Special Requests?
             </h3>
-            <p className="text-orange-800 mb-6">
+            <p className="text-orange-800 mb-4 sm:mb-6 text-sm sm:text-base">
               We'd love to hear from you! Whether you're planning an event, have
               dietary requirements, or just want to say hello.
             </p>
             <a
               href="mailto:hello@sepupuscafe.com"
-              className="inline-flex items-center gap-2 bg-orange-900 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-800 transition-colors duration-200"
+              className="inline-flex items-center gap-2 bg-orange-900 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-orange-800 transition-colors duration-200 text-sm sm:text-base"
             >
-              <Mail className="w-5 h-5" />
+              <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
               Send us an Email
             </a>
           </div>

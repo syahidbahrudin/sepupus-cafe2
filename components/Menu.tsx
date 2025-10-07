@@ -124,12 +124,12 @@ export default function Menu() {
     <section
       ref={sectionRef}
       id="menu"
-      className="min-h-screen bg-gradient-to-b from-orange-100 to-amber-50 py-20"
+      className="min-h-screen bg-gradient-to-b from-orange-100 to-amber-50 py-12 sm:py-16 lg:py-20"
     >
-      <div className="max-w-[1300px] mx-auto px-6">
-        <div className="text-center mb-16">
+      <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 sm:mb-16">
           <h2
-            className={`text-5xl font-bold text-orange-900 mb-6 transition-all duration-1000 ease-out ${
+            className={`text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-900 mb-4 sm:mb-6 transition-all duration-1000 ease-out ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"
@@ -139,7 +139,7 @@ export default function Menu() {
             Our Menu
           </h2>
           <p
-            className={`text-xl text-orange-800 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 ease-out ${
+            className={`text-lg sm:text-xl text-orange-800 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 ease-out ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"
@@ -151,17 +151,17 @@ export default function Menu() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Coffee Section */}
           <div
-            className={`bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-lg transition-all duration-1000 ease-out ${
+            className={`bg-white/70 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-lg transition-all duration-1000 ease-out ${
               isVisible
                 ? "opacity-100 translate-x-0"
                 : "opacity-0 -translate-x-8"
             }`}
             style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
           >
-            <h3 className="text-3xl font-bold text-orange-900 mb-8 text-center">
+            <h3 className="text-2xl sm:text-3xl font-bold text-orange-900 mb-6 sm:mb-8 text-center">
               ☕ Coffee
             </h3>
             <div className="space-y-6">
@@ -188,14 +188,14 @@ export default function Menu() {
 
           {/* Food Section */}
           <div
-            className={`bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-lg transition-all duration-1000 ease-out ${
+            className={`bg-white/70 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-lg transition-all duration-1000 ease-out ${
               isVisible
                 ? "opacity-100 translate-x-0"
                 : "opacity-0 translate-x-8"
             }`}
             style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
           >
-            <h3 className="text-3xl font-bold text-orange-900 mb-8 text-center">
+            <h3 className="text-2xl sm:text-3xl font-bold text-orange-900 mb-6 sm:mb-8 text-center">
               🥐 Food
             </h3>
             <div className="space-y-6">
@@ -222,31 +222,31 @@ export default function Menu() {
         </div>
 
         {/* Specialties Section */}
-        <div className="mt-12">
+        <div className="mt-8 sm:mt-12">
           <div
-            className={`bg-gradient-to-r from-orange-200 to-amber-200 p-8 rounded-2xl shadow-lg transition-all duration-1000 ease-out ${
+            className={`bg-gradient-to-r from-orange-200 to-amber-200 p-6 sm:p-8 rounded-2xl shadow-lg transition-all duration-1000 ease-out ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"
             }`}
             style={{ transitionDelay: isVisible ? "1000ms" : "0ms" }}
           >
-            <h3 className="text-3xl font-bold text-orange-900 mb-8 text-center">
+            <h3 className="text-2xl sm:text-3xl font-bold text-orange-900 mb-6 sm:mb-8 text-center">
               ✨ House Specialties
             </h3>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
               {specialties.map((item, index) => (
-                <div key={index} className="bg-white/80 p-6 rounded-xl">
-                  <div className="flex justify-between items-start">
+                <div key={index} className="bg-white/80 p-4 sm:p-6 rounded-xl">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
                     <div className="flex-1">
-                      <h4 className="text-lg font-semibold text-orange-900">
+                      <h4 className="text-base sm:text-lg font-semibold text-orange-900">
                         {item.name}
                       </h4>
                       <p className="text-orange-700 text-sm mt-1">
                         {item.description}
                       </p>
                     </div>
-                    <span className="text-orange-900 font-bold text-lg ml-4">
+                    <span className="text-orange-900 font-bold text-lg sm:ml-4 self-start">
                       {item.price}
                     </span>
                   </div>
@@ -257,11 +257,11 @@ export default function Menu() {
         </div>
 
         {/* Menu Footer */}
-        <div className="text-center mt-12">
-          <p className="text-orange-800 text-lg mb-4">
+        <div className="text-center mt-8 sm:mt-12">
+          <p className="text-orange-800 text-base sm:text-lg mb-3 sm:mb-4">
             All prices are in Malaysian Ringgit (RM)
           </p>
-          <p className="text-orange-700">
+          <p className="text-orange-700 text-sm sm:text-base">
             Ask our baristas about seasonal specials and daily fresh selections!
           </p>
         </div>
